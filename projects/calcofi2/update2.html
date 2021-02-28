@@ -418,13 +418,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grouping-and-splitting-the-fish-dataset-by-location">
-     Grouping and splitting the Fish Dataset by Location
+    <a class="reference internal nav-link" href="#grouping-and-splitting-the-water-and-fish-dataset-by-location">
+     Grouping and Splitting the Water and Fish Dataset by Location
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#finsing-the-most-abundant-fish-species-at-a-given-location-at-a-given-time-and-storing-in-a-dataset">
-     Finsing the Most Abundant Fish Species at a given location at a Given Time (and storing in a dataset)
+    <a class="reference internal nav-link" href="#finding-the-most-abundant-fish-species-at-a-given-location-at-a-given-time-and-storing-it-as-a-dataset">
+     Finding the Most Abundant Fish Species at a given location at a Given Time (and storing it as a dataset)
     </a>
    </li>
   </ul>
@@ -470,11 +470,13 @@ certain fish species was very dominant. We have been making more visualizations,
 <div class="section" id="subsetting-the-fish-dataset-to-match-the-water-dataset-sample-locations-times">
 <h3>Subsetting the Fish Dataset to Match the Water Dataset Sample Locations/Times<a class="headerlink" href="#subsetting-the-fish-dataset-to-match-the-water-dataset-sample-locations-times" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="grouping-and-splitting-the-fish-dataset-by-location">
-<h3>Grouping and splitting the Fish Dataset by Location<a class="headerlink" href="#grouping-and-splitting-the-fish-dataset-by-location" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="grouping-and-splitting-the-water-and-fish-dataset-by-location">
+<h3>Grouping and Splitting the Water and Fish Dataset by Location<a class="headerlink" href="#grouping-and-splitting-the-water-and-fish-dataset-by-location" title="Permalink to this headline">¶</a></h3>
+<p>We made sub-time series datasets, where each of these smaller datasets give the time series of water over all time steps in a certain small location area. We also split the fish data up this way as well in order to analyze the time series at a certain location only.</p>
 </div>
-<div class="section" id="finsing-the-most-abundant-fish-species-at-a-given-location-at-a-given-time-and-storing-in-a-dataset">
-<h3>Finsing the Most Abundant Fish Species at a given location at a Given Time (and storing in a dataset)<a class="headerlink" href="#finsing-the-most-abundant-fish-species-at-a-given-location-at-a-given-time-and-storing-in-a-dataset" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="finding-the-most-abundant-fish-species-at-a-given-location-at-a-given-time-and-storing-it-as-a-dataset">
+<h3>Finding the Most Abundant Fish Species at a given location at a Given Time (and storing it as a dataset)<a class="headerlink" href="#finding-the-most-abundant-fish-species-at-a-given-location-at-a-given-time-and-storing-it-as-a-dataset" title="Permalink to this headline">¶</a></h3>
+<p>In order to be able to correlate the makeup of fish species to water characteristics, we have started by obtaining the three most abundant fish species at a given location and time, and storing these results in a .csv file as a dataset. The fish dataset consists of fish abundance at a given location and time for each species of fish we are looking at, however we needed a way to compare abundance of two species against each other to see which has more abundant. For example at a given time/location, a species with abundance level of 19 when it’s average abundance is 10 is a different abundance level measure than a species with abundance of 19 when its average abundance is 500. So in order to compare this, we made another dataset, that measures the abundance of a species relative to its mean abundance at any given space and time. This way now, we can look at this relative abundances, and pick out the top three at a given time/location to be able to accurately extract “most abundant species”. From here we are now working on drawing out as many correlations and derived statistics as we can relating fish species abundance to water characteriatics.</p>
 </div>
 </div>
 <div class="section" id="water-correlations">
