@@ -495,8 +495,8 @@ certain fish species was very dominant. We have been making more visualizations,
 <h3>Finding the Most Abundant Fish Species at a given location at a Given Time (and storing it as a dataset)<a class="headerlink" href="#finding-the-most-abundant-fish-species-at-a-given-location-at-a-given-time-and-storing-it-as-a-dataset" title="Permalink to this headline">¶</a></h3>
 <p>In order to be able to correlate the makeup of fish species to water characteristics, we have started by obtaining the three most abundant fish species at a given location and time, and storing these results in a .csv file as a dataset. The fish dataset consists of fish abundance at a given location and time for each species of fish we are looking at, however we needed a way to compare abundance of two species against each other to see which has more abundant. For example at a given time/location, a species with abundance level of 19 when it’s average abundance is 10 is a different abundance level measure than a species with abundance of 19 when its average abundance is 500. So in order to compare this, we made another dataset, that measures the abundance of a species relative to its mean abundance at any given space and time. This way now, we can look at this relative abundances, and pick out the top three at a given time/location to be able to accurately extract “most abundant species”. From here we are now working on drawing out as many correlations and derived statistics as we can relating fish species abundance to water characteriatics.</p>
 <p>** <strong>Insert MostAbundantColumns.png here</strong> **</p>
-<div class="figure align-default" id="directive-fig">
-<a class="reference internal image-reference" href="../../_images/MostAbundantColumns.png"><img alt="../../_images/MostAbundantColumns.png" src="../../_images/MostAbundantColumns.png" style="height: 150px;" /></a>
+<div class="figure align-left" id="directive-fig">
+<a class="reference internal image-reference" href="../../_images/MostAbundantColumns.png"><img alt="../../_images/MostAbundantColumns.png" src="../../_images/MostAbundantColumns.png" style="width: 470.0px; height: 22.5px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Most Abundant Columns</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -504,8 +504,8 @@ certain fish species was very dominant. We have been making more visualizations,
 <div class="section" id="water-correlations">
 <h2>Water Correlations<a class="headerlink" href="#water-correlations" title="Permalink to this headline">¶</a></h2>
 <p>With the water data we were able to find strong postive and negative correlation.We used Pearson’s r correlation that measures linear correlation. Using linear regression method and finding pearson’s r coefficient I was able to make these visuals shown below.For my strong positive correlation I used DIC1 (Dissolve Inorganic Carbon) as the same feature but used different observant such as Sigma-Theta (denisty of water), Salinity1 (Salinity in DIC bottles) and TA1 (total alkanity). From the visual plots I made we can see that when we have low DIC we will most likely find low Sigma-Theta , Salinity1 and TA1 (total alkanity) and vice cersa when DIC is high.</p>
-<div class="figure align-default" id="id1">
-<a class="reference internal image-reference" href="../../_images/postive_cr.png"><img alt="../../_images/postive_cr.png" src="../../_images/postive_cr.png" style="height: 300px;" /></a>
+<div class="figure align-left" id="id1">
+<a class="reference internal image-reference" href="../../_images/postive_cr.png"><img alt="../../_images/postive_cr.png" src="../../_images/postive_cr.png" style="width: 1206.0px; height: 765.0px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Positive correlations</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>For my strong negetive correltation I use Tempature as my feature and had Salinity1, and DIC1 as my observant.With the visual plots I generated we can see the strong negative correlation. In area where their are high tempature in our data then we will find low levels of DIC and Salinity since they share a negative correlation relationship.</p>
