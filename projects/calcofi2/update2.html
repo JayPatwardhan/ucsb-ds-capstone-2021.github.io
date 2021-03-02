@@ -54,6 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="carpedata" href="../carpedata/description.html" />
+    <link rel="prev" title="Update 1" href="update1.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -145,7 +147,7 @@
   Projects
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../appfolio/description.html">
    appfolio
@@ -174,14 +176,19 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="description.html">
    calcofi2
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="update1.html">
      Update 1
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Update 2
     </a>
    </li>
   </ul>
@@ -488,7 +495,7 @@ certain fish species was very dominant. We have been making more visualizations,
 <p>When graphing the subsetted data, we noticed that there were 6 water locations that did not align in the same line/station pattern as the fish data. After further analysis, we found that all 6 anomalies occured on the same date, November of 2013 (Cruise=201311). We decided to elimate this from the final combined data for intial correlations to be able have the most accurate pH and larval fish abundance correlations as possible.</p>
 <div class="figure align-default" id="linestation-fig">
 <a class="reference internal image-reference" href="../../_images/LineStationPlot.png"><img alt="../../_images/LineStationPlot.png" src="../../_images/LineStationPlot.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-text">Plots showing where data is sampled from (blue points are water samples red are fish samples). The left side shows the few water data points that did not match the line and station patterns in the fish dataset.</span><a class="headerlink" href="#linestation-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Plots showing where data is sampled from (blue points are water samples red are fish samples). The left side shows the few water data points that did not match the line and station patterns in the fish dataset.</span><a class="headerlink" href="#linestation-fig" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="grouping-and-splitting-the-water-and-fish-dataset-by-location">
@@ -500,7 +507,7 @@ certain fish species was very dominant. We have been making more visualizations,
 <p>In order to be able to correlate the makeup of fish species to water characteristics, we have started by obtaining the three most abundant fish species at a given location and time, and storing these results in a .csv file as a dataset. The fish dataset consists of fish abundance at a given location and time for each species of fish we are looking at, however we needed a way to compare abundance of two species against each other to see which has more abundant. For example at a given time/location, a species with abundance level of 19 when it’s average abundance is 10 is a different abundance level measure than a species with abundance of 19 when its average abundance is 500. So in order to compare this, we made another dataset, that measures the abundance of a species relative to its mean abundance at any given space and time. This way now, we can look at this relative abundances, and pick out the top three at a given time/location to be able to accurately extract “most abundant species”. From here we are now working on drawing out as many correlations and derived statistics as we can relating fish species abundance to water characteriatics.</p>
 <div class="figure align-left" id="directive-fig">
 <a class="reference internal image-reference" href="../../_images/MostAbundantColumns.png"><img alt="../../_images/MostAbundantColumns.png" src="../../_images/MostAbundantColumns.png" style="width: 940.0px; height: 45.0px;" /></a>
-<p class="caption"><span class="caption-text">The columns of the dataset displaying the three most abundant fish species at a given location and time. “Cruise” denotes the date (YYYYMM); for example “201411” means “November of 2014”, and “Line_Sta_ID” is a way to measure the location in the ocean of a sample.</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">The columns of the dataset displaying the three most abundant fish species at a given location and time. “Cruise” denotes the date (YYYYMM); for example “201411” means “November of 2014”, and “Line_Sta_ID” is a way to measure the location in the ocean of a sample.</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -510,12 +517,12 @@ certain fish species was very dominant. We have been making more visualizations,
 <p>For my strong positive correlation I used DIC1 (Dissolve Inorganic Carbon) as the same feature but used different observant such as Sigma-Theta (denisty of water), Salinity1 (Salinity in DIC bottles) and TA1 (total alkanity). From the visual plots I made we can see that when we have low DIC we will most likely find low Sigma-Theta , Salinity1 and TA1 and vice cersa when DIC is high.</p>
 <div class="figure align-left" id="id1">
 <a class="reference internal image-reference" href="../../_images/postive_cr.png"><img alt="../../_images/postive_cr.png" src="../../_images/postive_cr.png" style="width: 964.8000000000001px; height: 612.0px;" /></a>
-<p class="caption"><span class="caption-text">Positively correlated characteristics (the missing observant on the top right plot is “sigma-theta”)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Positively correlated characteristics (the missing observant on the top right plot is “sigma-theta”)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>For my strong negetive correltation I use Tempature as my feature and had Salinity1, and DIC1 as my observant.With the visual plots I generated we can see the strong negative correlation. In area where their are high tempature in our data then we will find low levels of DIC and Salinity since they share a negative correlation relationship and vice versa when tempature is low.</p>
 <div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../../_images/negative_cr.png"><img alt="../../_images/negative_cr.png" src="../../_images/negative_cr.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-text">Negatively correlated characteristics</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Negatively correlated characteristics</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="heatmaps-of-water-characteristics">
@@ -524,7 +531,7 @@ certain fish species was very dominant. We have been making more visualizations,
 <p>However, what does “high” and “low” mean with respect to a given water characteristic? How do we decide on what “high” and “low” should be for a water characteristic. For any given water characteristic, we looked at the range of values it holds overall over all of the time steps (looking at the globally lowest and highest value in the dataset), and base the notion of “high” and “low” for that observed characteristic. At a given location and time step, the closer to the global minimum the characteristic value is, the “lower” and hence more blue it is denoted as, and the closer the the global maximum the value there is, the “higher” and more red it is denoted as. We made sure that for a given characteristic, we keep the same range of values we are color coding by over all time steps, so that this way we can compare how characteristic levels are changing over time visually by looking at how the colors change spatially over time, by looking at all the time step heatmaps for a given characteristic.</p>
 <div class="figure align-default" id="id3">
 <a class="reference internal image-reference" href="../../_images/NewTAHeatmaps.png"><img alt="../../_images/NewTAHeatmaps.png" src="../../_images/NewTAHeatmaps.png" style="height: 500px;" /></a>
-<p class="caption"><span class="caption-text">Two spatial heatmaps for the water alkalinity (TA) characteristic for two timesteps. The color at a location indicates the TA level in the water at that location.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Two spatial heatmaps for the water alkalinity (TA) characteristic for two timesteps. The color at a location indicates the TA level in the water at that location.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="accurately-inferring-water-ph-values-based-on-other-water-characteristics">
@@ -533,7 +540,7 @@ certain fish species was very dominant. We have been making more visualizations,
 <p>Due to the paper Perspectives in Environmental Chemistry by Donald L. Macalady (<a class="reference external" href="http://denning.atmos.colostate.edu/ats760/Readings/Tans_1998.pdf">http://denning.atmos.colostate.edu/ats760/Readings/Tans_1998.pdf</a>), as well as the discussion Simplified Carbonate Chemistry of Seawater based on an article by Pieter Tans, and the website <a class="reference external" href="https://biocycle.atmos.colostate.edu/shiny/carbonate/#References">https://biocycle.atmos.colostate.edu/shiny/carbonate/#References</a>, we wrote a Python script using the algorithm from the above mentioned sources that calculates the water pH level, based on using the water DIC (Dissolved Inorganic Carbon), TA (Total Alkalinity), and Temperature.</p>
 <div class="figure align-default" id="id4">
 <a class="reference internal image-reference" href="../../_images/pHHeatmap.png"><img alt="../../_images/pHHeatmap.png" src="../../_images/pHHeatmap.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-text">A sample spatial heatmap for the water pH characteristic levels that display the pH levels over various locations.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">A sample spatial heatmap for the water pH characteristic levels that display the pH levels over various locations.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="next-steps">
@@ -567,6 +574,8 @@ certain fish species was very dominant. We have been making more visualizations,
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="update1.html" title="previous page">Update 1</a>
+    <a class='right-next' id="next-link" href="../carpedata/description.html" title="next page">carpedata</a>
 
         </div>
         
