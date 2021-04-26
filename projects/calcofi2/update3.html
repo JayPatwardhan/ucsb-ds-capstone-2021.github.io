@@ -453,14 +453,31 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-review-of-our-project-and-goals">
-   A review of our project and goals
+  <a class="reference internal nav-link" href="#reiterating-our-project-and-goal">
+   Reiterating Our Project and Goal
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#new-processed-data">
-   New processed data
+  <a class="reference internal nav-link" href="#data-processing">
+   Data Processing
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-ph-calculations-to-fish-and-water-data">
+     Adding pH Calculations to Fish and Water Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relative-abundance">
+     Relative Abundance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formatting-datasets">
+     Formatting Datasets
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cluster-network">
@@ -492,12 +509,40 @@
 <h1>Update 3<a class="headerlink" href="#update-3" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>After update 1 and 2, we have been working on connecting the more independent explorations and progress we have made to get closer to our main goal of correlating pH with larval fish abundance. We have stepped beyond the inital exploratory aspects of the project and have completed data processing, began exploring species correlations, and looked further into kriging for data interpolation. With our calculations of pH, we are beginning to explore its relationship to the species and other factors in our datasets.</p>
 </div>
-<div class="section" id="a-review-of-our-project-and-goals">
-<h2>A review of our project and goals<a class="headerlink" href="#a-review-of-our-project-and-goals" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reiterating-our-project-and-goal">
+<h2>Reiterating Our Project and Goal<a class="headerlink" href="#reiterating-our-project-and-goal" title="Permalink to this headline">¶</a></h2>
+<p>In our project, we aim to correlate water data containing many water characteristics at a given location and time, to our fish data, in order to draw better understand relationships between how water characteristics affect the makeup of specific species in California’s oceans. We are especially interested in seeing how water pH affects the makeup of these fish species. We hope that our conclusions can be used to for one, be able to accurately infer what the makeup of fish looks like at a given time where we know the water makeup, and two also be able to predict what the makeup of fish should look like in the future. We hope that this will help reduce the effort needed to be able to get a portrayal of the makeup of fish, since currently usually sampling the fish by a boat all along California’s oceans is the effort that is needed.</p>
+<p>We are have a water time series dataset, what gives information about many water characteristics over many different locations, from 2008-2015, and we also have a fish time series dataset that tells us the abundance of each fish species at a given location and time, from the 1960’s until present.</p>
 </div>
-<div class="section" id="new-processed-data">
-<h2>New processed data<a class="headerlink" href="#new-processed-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-processing">
+<h2>Data Processing<a class="headerlink" href="#data-processing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-ph-calculations-to-fish-and-water-data">
+<h3>Adding pH Calculations to Fish and Water Data<a class="headerlink" href="#adding-ph-calculations-to-fish-and-water-data" title="Permalink to this headline">¶</a></h3>
+<p>Data processing has been a big part of this project as we have to connect the water characterisitcs data to the larval fish data. After subsetting the larger fish dataset to match the avaialble dates and locations from the water data, we were able to match fish and water observations and added in the calculated pH values for each observation, as mentioned in <img alt="Update 2" src="https://github.com/robin-hollingsworth/ucsb-ds-capstone-2021.github.io/blob/906a6bfefde537a4d696601f5abceefaa6951477/ucsb_ds_capstone_projects_2021/projects/calcofi2/update2.md" />. Being able to have the pH for each observation was a huge step towards our main project goal of correlating pH to larval fish abundance. Now we have all variables and measurements in one dataset with matching dates and locations from water, fish and pH calculations. We then decided to remove the water characteristics, except salinity and temperature. Because these water characteristics were used in the calculation of pH, we can infer their relationship with the species’ abundance through their relationship with pH and we mostly care about pH for the purpose of this project to observe the effects of climate change.</p>
+</div>
+<div class="section" id="relative-abundance">
+<h3>Relative Abundance<a class="headerlink" href="#relative-abundance" title="Permalink to this headline">¶</a></h3>
+<p>The original larval fish dataset gave an abundance measurement for each species. For the sake of this project we want to look at how the abundance is changing over time so we wanted a abundance value that would allow us to do that among species. With current measurement, we are not able to compare values with other species to see which are increasing more or less relative to each other. To solve this issue, we calculated a “relative abundance” value within each species using the formula:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">value</span> <span class="o">-</span> <span class="n">average</span> <span class="n">abundance</span><span class="p">)</span> <span class="o">/</span> <span class="n">average</span> <span class="n">abundance</span>
+</pre></div>
+</div>
+<p>We changed all 0 values (where there is no observation of a species) to NA values so that we could distinguish it with an abundance observation that is equivalent to the mean, meaning a relative abundance of 0.</p>
+</div>
+<div class="section" id="formatting-datasets">
+<h3>Formatting Datasets<a class="headerlink" href="#formatting-datasets" title="Permalink to this headline">¶</a></h3>
+<p>One issue we ran into with the way the datasets differed was that the water dataset was collected in the same locations over different depths while the fish dataset only had one collection per location. pH was calulated using the water characteristics at each depth so for one location their were multiple pH values. To avoid having repeated fish adundances, we found the minimum, maximum and mean pH values over the depths for each location. This allows us to keep some of the integrigity of the water dataset but also make it flow easily with the larval fish data.</p>
+<p>Seeing that we had a very wide dataset (large number of columns), we created a long (more rows, less columns) format dataset. This would make it easier to filter the dataset to subset a particular species or pH measurement (min, max, or mean) to explore. To do this, we created a column for the species name, relative abundance, pH measurement, and pH value.</p>
+<div class="figure align-default" id="wide-data">
+<a class="reference internal image-reference" href="projects/calcofi2/images/wide_data.png"><img alt="projects/calcofi2/images/wide_data.png" src="projects/calcofi2/images/wide_data.png" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-text">Wide Dataset: This is the format of the data after water, fish, and pH were combined into one dataset and the min, max and mean pH values are calculated.</span><a class="headerlink" href="#wide-data" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="long-data">
+<a class="reference internal image-reference" href="projects/calcofi2/images/long_data.png"><img alt="projects/calcofi2/images/long_data.png" src="projects/calcofi2/images/long_data.png" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-text">Long Dataset: This is the format of the “long” dataset with the pH and adundances turned into columns.</span><a class="headerlink" href="#long-data" title="Permalink to this image">¶</a></p>
+</div>
+</div>
 </div>
 <div class="section" id="cluster-network">
 <h2>Cluster Network<a class="headerlink" href="#cluster-network" title="Permalink to this headline">¶</a></h2>
