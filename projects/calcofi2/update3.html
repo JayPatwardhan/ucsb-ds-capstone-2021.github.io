@@ -51,6 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="carpedata" href="../carpedata/description.html" />
+    <link rel="prev" title="Update 2" href="update2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -148,7 +150,7 @@
   Projects
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../appfolio/description.html">
    appfolio
@@ -183,16 +185,16 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="description.html">
    calcofi2
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="update1.html">
      Update 1
@@ -201,6 +203,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="update2.html">
      Update 2
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Update 3
     </a>
    </li>
   </ul>
@@ -536,11 +543,11 @@
 <p>Seeing that we had a very wide dataset (large number of columns), we created a long (more rows, less columns) format dataset. This would make it easier to filter the dataset to subset a particular species or pH measurement (min, max, or mean) to explore. To do this, we created a column for the species name, relative abundance, pH measurement, and pH value.</p>
 <div class="figure align-default" id="wide-data">
 <a class="reference internal image-reference" href="../../_images/wide_data.png"><img alt="../../_images/wide_data.png" src="../../_images/wide_data.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-text">Wide Dataset: This is the format of the data after water, fish, and pH were combined into one dataset and the min, max and mean pH values are calculated.</span><a class="headerlink" href="#wide-data" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Wide Dataset: This is the format of the data after water, fish, and pH were combined into one dataset and the min, max and mean pH values are calculated.</span><a class="headerlink" href="#wide-data" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="long-data">
 <a class="reference internal image-reference" href="../../_images/long_data.png"><img alt="../../_images/long_data.png" src="../../_images/long_data.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-text">Long Dataset: This is the format of the “long” dataset with the pH and abundances turned into columns.</span><a class="headerlink" href="#long-data" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Long Dataset: This is the format of the “long” dataset with the pH and abundances turned into columns.</span><a class="headerlink" href="#long-data" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -549,12 +556,12 @@
 <p>Now that we calculated the pH balances and the relative fish abundance we want to look at the pairwise correlation between each fish species relative abundance and their pH values associated with them. We were able to make a correlation matrix that uses the method of perasons r to find pairwise correlation and used a heat map to visualize the correlation matrix created.The side bar color ranges the pearsons r coefficient with the color being close to 1 range is strong positive and and -1 is a strong negetive relationship and 0 signifying no correlation.</p>
 <div class="figure align-default" id="heat-map-of-correlation-matrix">
 <a class="reference internal image-reference" href="../../_images/first_clusternetwrok.png"><img alt="../../_images/first_clusternetwrok.png" src="../../_images/first_clusternetwrok.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-text">Heat map: This is the heatmap of the correlation matrix we created that founded pairwise correlation using pearsons r method.</span><a class="headerlink" href="#heat-map-of-correlation-matrix" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Heat map: This is the heatmap of the correlation matrix we created that founded pairwise correlation using pearsons r method.</span><a class="headerlink" href="#heat-map-of-correlation-matrix" title="Permalink to this image">¶</a></p>
 </div>
 <p>From here I was able to use the hierarchical cluster method to find a cluster network. With the clustering founded I was able to visualize it with the sides repesenting the dendogram of the clustering along with the heat map of the correlation network founded like the image above explained.The image below is the clustering network founded.</p>
 <div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../_images/first_realcluster.png"><img alt="../../_images/first_realcluster.png" src="../../_images/first_realcluster.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-text">Cluster network: This is the clusters we founded using hierachal clustering and also includes the heat map to shows the pairwise correlation between each species relative abundance and its pH value.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Cluster network: This is the clusters we founded using hierachal clustering and also includes the heat map to shows the pairwise correlation between each species relative abundance and its pH value.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The visualization above will give us a better understanding of the relationship between each fish species relative abundance and their pH values. This anaylsis is still ongoing and will explain significiance of the visualization in greater detail in the next progress report.</p>
 </div>
@@ -593,6 +600,8 @@
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="update2.html" title="previous page">Update 2</a>
+    <a class='right-next' id="next-link" href="../carpedata/description.html" title="next page">carpedata</a>
 
         </div>
         
